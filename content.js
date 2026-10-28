@@ -175,6 +175,7 @@ const items = [
   },
   {
     "id": "website-journey",
+    "coverLabel": "ابنِ موقعك.",
     "type": "experiment",
     "category": "دليل بناء ونشر",
     "badge": "خطوة بخطوة",
