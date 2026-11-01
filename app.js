@@ -9,7 +9,7 @@ try {
 function persist(key, value) { try { localStorage.setItem(key, value); } catch {} }
 function cover(item) {
   if (item.coverLabel) return '<span class="library-cover-word" dir="ltr">' + item.coverLabel + '</span><span class="cover-tag mono">' + item.tag + '</span>';
-  if (item.cover === 'tool') return '<img src="assets/tool-preview.jpg" alt="واجهة جهّز صورتك" loading="lazy" width="1348" height="926">';
+  if (item.cover === 'tool') return '<img src="assets/tool-preview.webp" alt="واجهة جهّز صورتك" decoding="async" srcset="assets/tool-preview-small.webp 672w, assets/tool-preview.webp 1348w" sizes="(max-width:650px) calc(100vw - 80px), 360px" loading="lazy" width="1348" height="926">';
   if (item.cover === 'apple') return '<div class="apple-cover" aria-hidden="true">Design.<small>WITH PURPOSE</small></div><span class="cover-tag mono">APPLE HIG</span>';
   if (item.type === 'prompt') return '<div class="prompt-lines" aria-hidden="true"><strong>' + (item.id === 'build-prompt' ? '&gt; build_' : '&gt; review_') + '</strong><span></span><span></span><span></span></div><span class="cover-tag mono">' + item.tag + '</span>';
   if (item.type === 'repo') return '<svg class="icon large-icon" aria-hidden="true"><use href="#code"/></svg><span class="cover-decoration" aria-hidden="true">&lt;/&gt;</span><span class="cover-tag mono">' + item.tag + '</span>';
@@ -189,7 +189,7 @@ document.addEventListener('keydown', event => {
 let scrollQueued = false;
 function updateProgress() {
   const max = document.documentElement.scrollHeight - window.innerHeight;
-  $('reading-progress').style.width = (max > 0 ? Math.min(100, Math.max(0, window.scrollY / max * 100)) : 0) + '%';
+  $('reading-progress').style.transform = 'scaleX(' + (max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0) + ')';
   document.querySelector('.header').classList.toggle('is-scrolled', window.scrollY > 12);
   if (window.scrollY < 80) document.querySelectorAll('.header nav a[aria-current]').forEach(link => link.removeAttribute('aria-current'));
   scrollQueued = false;
@@ -205,7 +205,7 @@ if ('IntersectionObserver' in window) {
       });
     });
   }, {rootMargin:'-90px 0px -60% 0px', threshold:0});
-  ['services','work','library'].forEach(id => observer.observe($(id)));
+  ['services','work','motion','library'].forEach(id => observer.observe($(id)));
 }
 async function copyText(text) {
   if (navigator.clipboard && window.isSecureContext) { try { await navigator.clipboard.writeText(text); return; } catch {} }
