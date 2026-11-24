@@ -1,0 +1,8 @@
+{
+  "name": "mshary-portfolio",
+  "private": true,
+  "version": "2.0.0",
+  "scripts": {
+    "check": "node --check portfolio.js"
+  }
+}

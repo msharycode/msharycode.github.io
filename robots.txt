@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://msharycode.github.io/sitemap.xml
