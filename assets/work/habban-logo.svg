@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="475 38 650 802" role="img" aria-label="Habban United H">
+  <defs>
+    <linearGradient id="habban-metal" x1=".04" y1=".96" x2=".91" y2=".08">
+      <stop offset="0" stop-color="#105BB4"/>
+      <stop offset=".42" stop-color="#0851B4"/>
+      <stop offset=".72" stop-color="#0969D0"/>
+      <stop offset="1" stop-color="#2B99F1"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#habban-metal)" fill-rule="evenodd" stroke="#5CAAF3" stroke-width="2.4" stroke-linejoin="round"
+    d="M590 134H690V373H906V231A116 116 0 1 1 1005 277V780H906V466H690V648A113 113 0 1 1 590 604Z
+       M1085 164A90 90 0 1 0 905 164A90 90 0 1 0 1085 164Z
+       M688 715A87 87 0 1 0 514 715A87 87 0 1 0 688 715Z"/>
+</svg>
